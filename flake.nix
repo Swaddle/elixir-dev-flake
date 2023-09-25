@@ -20,10 +20,8 @@
     {
       devShell.aarch64-darwin = pkgs.mkShell {
         inherit MIX_PATH MIX_REBAR3;
-        # use local HOME to avoid global things
         MIX_HOME = ".cache/mix";
         HEX_HOME = ".cache/hex";
-        # enable IEx shell history
         ERL_AFLAGS = "-kernel shell_history enabled";
         packages = [
           elixir
